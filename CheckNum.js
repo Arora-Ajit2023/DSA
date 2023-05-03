@@ -11,6 +11,9 @@
  */
 
 const CheckNum = (input, value) => {
+  if (!input || typeof input === 'string' || !value) {
+    return 'Enter Valid  Input';
+  }
   const NewArr = input.split(' ');
   for (let i = 0; i < NewArr.length; i++) {
     if (NewArr[i] === value) {
