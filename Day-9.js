@@ -18,7 +18,7 @@ const MissingNumbers = (input) => {
 
   for (let i = 0; i < input.length; i++) {
     if (input[i + 1] - input[i] > 1) {
-      let diff = input[i + 1] - input[i]; // 3
+      const diff = input[i + 1] - input[i]; // 3
 
       for (let j = 1; j < diff; j++) {
         arr.push(input[i] + j);
