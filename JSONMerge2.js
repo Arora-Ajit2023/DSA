@@ -1,3 +1,4 @@
+// @ts-nocheck
 const students = [
   {
     id: 1,
@@ -74,3 +75,23 @@ const subjects = [
 //     subjects: [],
 //   },
 // ];
+
+const result = students.map((student) => {
+  const output = {
+    studentId: student.id,
+    name: student.name,
+    subjects: [],
+  };
+  const studentFilter = subjects.filter((subjectFilter) => {
+    if (student.id === subjectFilter.studentId) {
+      output.subjects.push({
+        subjectId: subjectFilter.subjectId,
+        subjectName: subjectFilter.subjectName,
+      });
+      return true;
+    }
+    return false;
+  });
+  return output;
+});
+console.log(result);
