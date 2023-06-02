@@ -17,6 +17,7 @@
     "no-prototype-builtins": 0,
     "no-param-reassign": 0,
     "spaced-comment": 0,
-    "eslint max-len": 0
+    "eslint max-len": 0,
+    "eslint no-else-return": true
   }
 }
