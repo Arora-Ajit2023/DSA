@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  // map() polyfill
+  // map((item,index,array)=>{})
+
+  Array.prototype.MyMap = function (cb) {
+    let ar1 = [];
+    for (let i = 0; i < this.length; i++) {
+      ar1.push(cb(this[i], i, this));
+    }
+    return ar1;
+  };
+
+  const ar = [1, 2, 3, 4, 5];
+  const result = ar.MyMap((item, i, arary) => {
+    return i;
+  });
+  console.log(result);
+
+  // for filter
+  Array.prototype.MyFilter = function (callback) {
+    const ar = [];
+    for (let j = 0; j < this.length; j++) {
+      if (callback(this[j], j, this)) {
+        ar.push(this[j]);
+      }
+    }
+    return ar;
+  };
+  const aer = [1, 2, 3, 4, 5, 6];
+  const CheckNum = aer.MyFilter((i) => {
+    if (i % 2 === 0) {
+      return i;
+    }
+  });
+  console.log(CheckNum);
+</script>

@@ -61,4 +61,12 @@
     return accumlator + item;
   });
   console.log(sum);
+
+  const reduceEx = [1, 2, 3, 4, 5, 6];
+
+  const result3 = reduceEx.reduce((accu, curr, i, arr) => {
+    return accu + curr;
+  });
+
+  console.log(result3);
 </script>
