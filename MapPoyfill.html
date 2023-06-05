@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+  , initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    Map folyfill
+  </body>
+</html>
+
+<script>
+  //for Map
+  Array.prototype.myMap = function (callback) {
+    const ar = [];
+    for (let i = 0; i < this.length; i++) {
+      ar.push(this[i] * 6);
+    }
+    return ar;
+  };
+  const cr = [1, 2, 3];
+  const x = cr.myMap();
+  console.log(x);
+
+  // For Filter
+
+  Array.prototype.MyFilter = function (callback) {
+    const ar = [];
+    for (let j = 0; j < this.length; j++) {
+      if (callback(this[j], j, this)) {
+        ar.push(this[j]);
+      }
+    }
+    return ar;
+  };
+  const aer = [1, 2, 3, 4, 5, 6];
+  const CheckNum = aer.MyFilter((i) => {
+    if (i % 2 === 0) {
+      return i;
+    }
+  });
+  console.log(CheckNum);
+
+  //For reduce
+  Array.prototype.MrReduce = function (cb, initialvalue) {
+    let accumlator = initialvalue;
+    for (let i = 0; i < this.length; i++) {
+      accumlator = accumlator ? cb(accumlator, this[i], i, this) : this[i];
+    }
+    return accumlator;
+  };
+
+  const array = [1, 2, 3, 4, 5, 6];
+  const sum = array.MrReduce((accumlator, item, index, Array) => {
+    return accumlator + item;
+  });
+  console.log(sum);
+</script>
