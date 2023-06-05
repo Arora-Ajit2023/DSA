@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = [
+    {
+      id: 1,
+      name: 'Ashwini',
+    },
+    {
+      id: 10,
+      name: 'Vishal',
+    },
+  ];
+
+  const orders = [
+    {
+      userId: 1,
+      productId: 101,
+      productName: 'Samsung Galaxy s2',
+    },
+    {
+      userId: 1,
+      productId: 102,
+      productName: 'Samsung Galaxy Watch',
+    },
+    {
+      userId: 10,
+      productId: 103,
+      productName: 'Samsung LED TV',
+    },
+  ];
+  // Output Result
+
+  //   const finalDetails = [
+  //     {
+  //       userId: 1,
+  //       name: 'Ashwini',
+  //       orders: [
+  //         {
+  //           productId: 101,
+  //           productName: 'Samsung Galaxy s2',
+  //         },
+  //         {
+  //           productId: 102,
+  //           productName: 'Samsung Galaxy Watch',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       userId: 10,
+  //       name: 'Vishal',
+  //       orders: [
+  //         {
+  //           productId: 103,
+  //           productName: 'Samsung LED TV',
+  //         },
+  //       ],
+  //     },
+  //   ];
+
+  const result = profile.map((user) => {
+    const result = { id: user.id, name: user.name, orders: [] };
+    orders.filter((order) => {
+      if (user.id === order.userId) {
+        result.orders.push({
+          productId: order.productId,
+          productName: order.productName,
+        });
+      }
+    });
+    return result;
+  });
+  console.log(result);
+</script>
