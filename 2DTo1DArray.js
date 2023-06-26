@@ -10,8 +10,12 @@ const arr = [
 // ["a", "b", "c", "d", "e", "f"];
 
 const ConverAr = (ar) => {
-  for (let i = 0; i > ar.length; i++) {
-    console.log('ar', i);
+  const newArr = [];
+  for (let i = 0; i < ar.length; i++) {
+    for (let j = 0; j < ar[i].length; j++) {
+      newArr.push(ar[i][j]);
+    }
   }
+  return newArr;
 };
 console.log(ConverAr(arr));

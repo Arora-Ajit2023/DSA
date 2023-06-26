@@ -19,6 +19,6 @@ const CheckAllChar = (input) => {
     }
     count = 0;
   }
-  return { countObj, NewInput };
+  return countObj;
 };
 console.log(CheckAllChar('jhasydsjdsuelaawdjoiebj'));

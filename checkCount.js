@@ -21,4 +21,4 @@ const CheckCharCount = (input, value) => {
   return { character: NewChar, count };
 };
 
-console.log(CheckCharCount('aasxsdcccccccccCCcsdssds', 'c'));
+console.log(CheckCharCount('aasxsdcccccccccCCcsdssdsccc', 'c'));

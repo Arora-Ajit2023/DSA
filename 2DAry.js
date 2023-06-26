@@ -10,15 +10,11 @@
 
 const covertArryInOneDimension = (ar, num) => {
   const result = [];
-  if (ar.length <= num) {
-    result.push(ar);
-    return result;
-  }
 
-  for (let i = 0; i < ar.length; i++) {
+  for (let i = 0; i < ar.length; i + num) {
     result.push(ar.splice(i, num));
   }
   return result;
 };
 
-console.log(covertArryInOneDimension(['a', 'b', 'c', 'd'], 2));
+console.log(covertArryInOneDimension(['a', 'b', 'c', 'd', 'e', 'f', 'g'], 2));

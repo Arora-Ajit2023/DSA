@@ -29,4 +29,4 @@ const searchInsert = (nums, target) => {
   }
   return low;
 };
-console.log(searchInsert([1, 3, 5, 6], 7));
+console.log(searchInsert([1, 3, 5, 6, 7], 3));
