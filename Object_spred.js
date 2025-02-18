@@ -136,6 +136,6 @@ const applyDiscount = (discount) => {
   return newCart;
 };
 
-console.log("cartAddResult", addItem(item), cart);
+// console.log("cartAddResult", addItem(item), cart);
 console.log("cartRemoveResult", removeItem(2), cart);
 console.log("cartDiscountResult", removeItem("5%"), cart);
